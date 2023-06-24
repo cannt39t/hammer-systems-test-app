@@ -155,11 +155,11 @@ extension MenuViewController {
         })
         
         let actionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(206))
-        let actionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: actionHeaderSize, elementKind: "ActionHeader", alignment: .top)
+        let actionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: actionHeaderSize, elementKind: ActionHeader.identifier, alignment: .top)
         actionHeader.zIndex = -1
         
         let globalHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(68))
-        let globalHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: globalHeaderSize, elementKind: "CategoryHeader", alignment: .top)
+        let globalHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: globalHeaderSize, elementKind: CategoryHeader.identifier, alignment: .top)
         globalHeader.pinToVisibleBounds = true
         
         let config = UICollectionViewCompositionalLayoutConfiguration()
