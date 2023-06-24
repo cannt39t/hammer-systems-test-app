@@ -18,7 +18,7 @@ struct ProductResponse: Codable {
     var productos: [HSProduct]
 }
 
-class MenuWorker {
+final class MenuWorker {
     
     private let APIManager = PizzaAPIManager()
     

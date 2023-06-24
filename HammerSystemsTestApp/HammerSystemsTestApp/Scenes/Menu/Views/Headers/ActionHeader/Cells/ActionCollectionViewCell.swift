@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ActionCollectionViewCell: BaseCell {
+final class ActionCollectionViewCell: BaseCell {
     
     static let identifier = "ActionCollectionViewCell"
     

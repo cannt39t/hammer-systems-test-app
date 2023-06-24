@@ -19,7 +19,7 @@ protocol MenuDataPassing {
     var dataStore: MenuDataStore? { get }
 }
 
-class MenuRouter: NSObject, MenuRoutingLogic, MenuDataPassing {
+final class MenuRouter: NSObject, MenuRoutingLogic, MenuDataPassing {
     weak var viewController: MenuViewController?
     var dataStore: MenuDataStore?
 }

@@ -17,7 +17,7 @@ protocol MenuPresentationLogic {
     func presentProducts(response: Menu.Product.Response)
 }
 
-class MenuPresenter: MenuPresentationLogic {
+final class MenuPresenter: MenuPresentationLogic {
     
     weak var viewController: MenuDisplayLogic?
     

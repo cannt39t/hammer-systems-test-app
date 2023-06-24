@@ -22,7 +22,7 @@ protocol MenuDataStore {
 
 }
 
-class MenuInteractor: MenuBusinessLogic, MenuDataStore {
+final class MenuInteractor: MenuBusinessLogic, MenuDataStore {
     
     var presenter: MenuPresentationLogic?
     var worker: MenuWorker = MenuWorker()

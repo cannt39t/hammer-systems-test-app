@@ -154,8 +154,8 @@ extension MenuViewController {
         ])
         
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.identifier)
-        collectionView.register(ActionHeader.self, forSupplementaryViewOfKind: "ActionHeader", withReuseIdentifier: ActionHeader.identifier)
-        collectionView.register(CategoryHeader.self, forSupplementaryViewOfKind: "CategoryHeader", withReuseIdentifier: CategoryHeader.identifier)
+        collectionView.register(ActionHeader.self, forSupplementaryViewOfKind: ActionHeader.identifier, withReuseIdentifier: ActionHeader.identifier)
+        collectionView.register(CategoryHeader.self, forSupplementaryViewOfKind: CategoryHeader.identifier, withReuseIdentifier: CategoryHeader.identifier)
     }
     
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
@@ -241,14 +241,14 @@ extension MenuViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == "CategoryHeader" {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CategoryHeader", for: indexPath) as! CategoryHeader
+        if kind == CategoryHeader.identifier {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CategoryHeader.identifier, for: indexPath) as! CategoryHeader
             header.delegate = self
             header.categories = categoryViewModel
             self.categoryHeader = header
             return header
         } else {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ActionHeader", for: indexPath) as! ActionHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ActionHeader.identifier, for: indexPath) as! ActionHeader
             self.actionsHeader = header
             header.actions = actionsViewModel
             return header
@@ -260,7 +260,7 @@ extension MenuViewController: CategoryHeaderDelegate {
     
     func moveToSection(at sectionIndex: Int) {
         canChage = false
-        collectionView.scrollToItem(at: IndexPath(row: 0, section: sectionIndex), at: .top, animated: true)
+        collectionView.scrollToItem(at: IndexPath(row: 0, section: sectionIndex), at: .centeredVertically, animated: true)
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PizzaAPIManager {
+final class PizzaAPIManager {
     
     let headers = [
         "X-RapidAPI-Key": "98b07ee665msh5f923589946f2fcp1c5b51jsncaa7695ea568",

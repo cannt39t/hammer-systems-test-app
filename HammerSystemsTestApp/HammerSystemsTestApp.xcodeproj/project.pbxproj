@@ -141,8 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				0521ABA82A45F57500AFD234 /* BaseHeader.swift */,
-				0521AB942A45D35D00AFD234 /* CategoryHeader */,
 				0521AB952A45D36800AFD234 /* ActionHeader */,
+				0521AB942A45D35D00AFD234 /* CategoryHeader */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
