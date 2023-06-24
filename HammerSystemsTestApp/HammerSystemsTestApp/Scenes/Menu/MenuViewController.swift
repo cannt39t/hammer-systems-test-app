@@ -205,15 +205,13 @@ extension MenuViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let categoryHeader = categoryHeader else { return }
-        if abs(categoryHeader.selectedCategory - indexPath.section) == 1 && canChage {
+        if indexPath.section == categoryHeader.selectedCategory {
+            canChage = true
+        }
+        
+        if canChage {
             categoryHeader.moveToCategory(with: indexPath.section)
             categoryHeader.selectedCategory = indexPath.section
-        }
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            self.canChage = true
         }
     }
 }
