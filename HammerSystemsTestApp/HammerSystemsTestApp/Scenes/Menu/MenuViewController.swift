@@ -11,16 +11,9 @@
 import UIKit
 
 protocol MenuViewControllerHeaderDelegate: AnyObject {
+    var canChange: Bool { get set }
     func moveToCategory(with index: Int)
 }
-
-extension UIColor {
-    static var random: UIColor {
-        return .init(hue: .random(in: 0...1), saturation: 1, brightness: 1, alpha: 1)
-    }
-}
-
-
 
 protocol MenuDisplayLogic: AnyObject {
     
@@ -30,8 +23,6 @@ protocol MenuDisplayLogic: AnyObject {
 }
 
 final class MenuViewController: UIViewController, MenuDisplayLogic {
-    
-    var canChage = true
     
     var interactor: MenuBusinessLogic?
     var router: (NSObjectProtocol & MenuRoutingLogic & MenuDataPassing)?
@@ -206,10 +197,10 @@ extension MenuViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let categoryHeader = categoryHeader else { return }
         if indexPath.section == categoryHeader.selectedCategory {
-            canChage = true
+            categoryHeader.canChange = true
         }
         
-        if canChage && indexPath.section != categoryHeader.selectedCategory {
+        if categoryHeader.canChange && indexPath.section != categoryHeader.selectedCategory {
             categoryHeader.moveToCategory(with: indexPath.section)
             categoryHeader.selectedCategory = indexPath.section
         }
@@ -259,8 +250,9 @@ extension MenuViewController: UICollectionViewDataSource {
 extension MenuViewController: CategoryHeaderDelegate {
     
     func moveToSection(at sectionIndex: Int) {
-        canChage = false
-        collectionView.scrollToItem(at: IndexPath(row: 0, section: sectionIndex), at: .centeredVertically, animated: true)
+        guard let categoryHeader = categoryHeader else { return }
+        categoryHeader.canChange = false
+        collectionView.scrollToItem(at: IndexPath(row: 0, section: sectionIndex), at: .top, animated: true)
     }
 }
 

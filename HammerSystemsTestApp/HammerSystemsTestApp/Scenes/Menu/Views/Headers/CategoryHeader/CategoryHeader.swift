@@ -17,6 +17,7 @@ final class CategoryHeader: BaseHeader {
     weak var delegate: CategoryHeaderDelegate!
     var selectedCategory: Int = 0
     var categories: [Menu.Category.ViewModel] = []
+    var canChange = true
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
