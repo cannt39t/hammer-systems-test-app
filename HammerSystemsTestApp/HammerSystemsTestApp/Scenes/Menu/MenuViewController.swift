@@ -31,6 +31,8 @@ protocol MenuDisplayLogic: AnyObject {
 
 final class MenuViewController: UIViewController, MenuDisplayLogic {
     
+    var canChage = true
+    
     var interactor: MenuBusinessLogic?
     var router: (NSObjectProtocol & MenuRoutingLogic & MenuDataPassing)?
     
@@ -43,7 +45,6 @@ final class MenuViewController: UIViewController, MenuDisplayLogic {
     var collectionView: UICollectionView!
     weak var categoryHeader: CategoryHeader?
     weak var actionsHeader: ActionHeader?
-    private var currentSection: Int = 0
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -203,9 +204,16 @@ extension MenuViewController {
 extension MenuViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if currentSection != indexPath.section {
-            currentSection = indexPath.section
-            categoryHeader?.moveToCategory(with: indexPath.section)
+        guard let categoryHeader = categoryHeader else { return }
+        if abs(categoryHeader.selectedCategory - indexPath.section) == 1 && canChage {
+            categoryHeader.moveToCategory(with: indexPath.section)
+            categoryHeader.selectedCategory = indexPath.section
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.canChage = true
         }
     }
 }
@@ -222,7 +230,6 @@ extension MenuViewController: UICollectionViewDataSource {
         } else {
             cell .layer.cornerRadius = 0
         }
-        productViewModel.shuffle()
         cell.configure(with: productViewModel[indexPath.item])
         return cell
     }
@@ -254,7 +261,8 @@ extension MenuViewController: UICollectionViewDataSource {
 extension MenuViewController: CategoryHeaderDelegate {
     
     func moveToSection(at sectionIndex: Int) {
-        collectionView.scrollToItem(at: IndexPath(row: 0, section: sectionIndex), at: .top, animated: false)
+        canChage = false
+        collectionView.scrollToItem(at: IndexPath(row: 0, section: sectionIndex), at: .top, animated: true)
     }
 }
 

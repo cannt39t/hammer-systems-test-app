@@ -15,7 +15,7 @@ final class CategoryHeader: BaseHeader {
         
     static let identifier = "CategoryHeader"
     weak var delegate: CategoryHeaderDelegate!
-    private var selectedCategory: Int = 0
+    var selectedCategory: Int = 0
     var categories: [Menu.Category.ViewModel] = []
     
     private let collectionView: UICollectionView = {

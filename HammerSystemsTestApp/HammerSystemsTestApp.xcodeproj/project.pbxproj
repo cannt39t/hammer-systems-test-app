@@ -14,7 +14,6 @@
 		0521AB792A45BB8300AFD234 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521AB732A45BB8300AFD234 /* MenuRouter.swift */; };
 		0521AB7B2A45BB8300AFD234 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521AB752A45BB8300AFD234 /* MenuViewController.swift */; };
 		0521AB7C2A45BB8300AFD234 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521AB762A45BB8300AFD234 /* MenuInteractor.swift */; };
-		0521AB7F2A45D29F00AFD234 /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521AB7E2A45D29E00AFD234 /* MenuModels.swift */; };
 		0521AB852A45D2FD00AFD234 /* ActionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521AB842A45D2FD00AFD234 /* ActionHeader.swift */; };
 		0521AB872A45D31900AFD234 /* ActionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521AB862A45D31900AFD234 /* ActionCollectionViewCell.swift */; };
 		0521AB902A45D34400AFD234 /* CategoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0521AB8E2A45D34400AFD234 /* CategoryHeader.swift */; };
@@ -38,6 +37,7 @@
 		053A873C2A445857006B78FD /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A873B2A445857006B78FD /* UIView + ext.swift */; };
 		053F16C72A44CE3600CA3351 /* HSCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F16C62A44CE3600CA3351 /* HSCategory.swift */; };
 		053F16D12A44FC5D00CA3351 /* HSAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F16D02A44FC5D00CA3351 /* HSAction.swift */; };
+		054B02872A46698E00F61B8A /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B02862A46698E00F61B8A /* MenuModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,6 @@
 		0521AB732A45BB8300AFD234 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		0521AB752A45BB8300AFD234 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0521AB762A45BB8300AFD234 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
-		0521AB7E2A45D29E00AFD234 /* MenuModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuModels.swift; path = ../../../../../../../.Trash/MenuModels.swift; sourceTree = "<group>"; };
 		0521AB842A45D2FD00AFD234 /* ActionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionHeader.swift; sourceTree = "<group>"; };
 		0521AB862A45D31900AFD234 /* ActionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCollectionViewCell.swift; sourceTree = "<group>"; };
 		0521AB8E2A45D34400AFD234 /* CategoryHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryHeader.swift; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		053A873B2A445857006B78FD /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		053F16C62A44CE3600CA3351 /* HSCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSCategory.swift; sourceTree = "<group>"; };
 		053F16D02A44FC5D00CA3351 /* HSAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAction.swift; sourceTree = "<group>"; };
+		054B02862A46698E00F61B8A /* MenuModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 		0521AB702A45BB7500AFD234 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				0521AB7E2A45D29E00AFD234 /* MenuModels.swift */,
+				054B02862A46698E00F61B8A /* MenuModels.swift */,
 				0521AB712A45BB8300AFD234 /* MenuPresenter.swift */,
 				0521AB722A45BB8300AFD234 /* MenuWorker.swift */,
 				0521AB732A45BB8300AFD234 /* MenuRouter.swift */,
@@ -382,7 +382,6 @@
 				0521AB772A45BB8300AFD234 /* MenuPresenter.swift in Sources */,
 				053A87192A444A86006B78FD /* AppDelegate.swift in Sources */,
 				0521ABB22A45F97A00AFD234 /* TabBarViewController.swift in Sources */,
-				0521AB7F2A45D29F00AFD234 /* MenuModels.swift in Sources */,
 				0521AB5A2A45A5B800AFD234 /* PizzaAPIManager.swift in Sources */,
 				0521ABAD2A45F91D00AFD234 /* CartViewController.swift in Sources */,
 				0521AB7B2A45BB8300AFD234 /* MenuViewController.swift in Sources */,
@@ -390,6 +389,7 @@
 				0521AB5C2A45A75B00AFD234 /* HSProduct.swift in Sources */,
 				0521AB9E2A45E46D00AFD234 /* BaseButton.swift in Sources */,
 				053F16D12A44FC5D00CA3351 /* HSAction.swift in Sources */,
+				054B02872A46698E00F61B8A /* MenuModels.swift in Sources */,
 				053A871B2A444A86006B78FD /* SceneDelegate.swift in Sources */,
 				053F16C72A44CE3600CA3351 /* HSCategory.swift in Sources */,
 				0521ABAF2A45F92600AFD234 /* ContactsViewController.swift in Sources */,
