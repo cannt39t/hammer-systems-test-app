@@ -209,7 +209,7 @@ extension MenuViewController: UICollectionViewDelegate {
             canChage = true
         }
         
-        if canChage {
+        if canChage && indexPath.section != categoryHeader.selectedCategory {
             categoryHeader.moveToCategory(with: indexPath.section)
             categoryHeader.selectedCategory = indexPath.section
         }
