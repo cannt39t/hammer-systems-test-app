@@ -32,7 +32,7 @@ enum R {
         static let downArrow = UIImage(named: "downArrow")
         static let defaultImage = UIImage(systemName: "photo.circle")
         
-        static func getTitleFor(tab: Tabs) -> UIImage? {
+        static func getImageFor(tab: Tabs) -> UIImage? {
             switch tab {
                 case .menu:
                     return UIImage(named: "menu")

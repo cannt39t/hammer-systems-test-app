@@ -34,7 +34,7 @@ final class TabBarViewController: UITabBarController {
         let controllers: [UIViewController] = Tabs.allCases.map { tab in
             let controller = UINavigationController(rootViewController: getController(for: tab))
             controller.tabBarItem = UITabBarItem(title: R.Strings.getTitleFor(tab: tab),
-                                                 image: R.Images.getTitleFor(tab: tab),
+                                                 image: R.Images.getImageFor(tab: tab),
                                                  tag: tab.rawValue)
             return controller
         }
