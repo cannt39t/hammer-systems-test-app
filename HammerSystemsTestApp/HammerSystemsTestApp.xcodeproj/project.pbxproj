@@ -273,12 +273,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		055062FB2A458CFC000D94EF /* Contants */ = {
+		055062FB2A458CFC000D94EF /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
 				0521ABAE2A45F92600AFD234 /* ContactsViewController.swift */,
 			);
-			path = Contants;
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 		055062FD2A458D26000D94EF /* Cart */ = {
@@ -296,7 +296,7 @@
 				0521AB702A45BB7500AFD234 /* Menu */,
 				0521AB6F2A45BB0200AFD234 /* Profile */,
 				055062FD2A458D26000D94EF /* Cart */,
-				055062FB2A458CFC000D94EF /* Contants */,
+				055062FB2A458CFC000D94EF /* Contacts */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
