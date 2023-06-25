@@ -9,9 +9,6 @@ import UIKit
 
 final class CategoryCollectionViewCell: BaseCell {
     
-    
-    static let identifier = "CategoryCollectionViewCell"
-    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1

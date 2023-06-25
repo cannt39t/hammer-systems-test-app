@@ -9,8 +9,6 @@ import UIKit
 
 final class ActionCollectionViewCell: BaseCell {
     
-    static let identifier = "ActionCollectionViewCell"
-    
     private let imageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill

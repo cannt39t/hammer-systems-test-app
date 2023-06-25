@@ -13,7 +13,6 @@ protocol CategoryHeaderDelegate: AnyObject {
 
 final class CategoryHeader: BaseHeader {
         
-    static let identifier = "CategoryHeader"
     weak var delegate: CategoryHeaderDelegate!
     var selectedCategory: Int = 0
     var categories: [Menu.Category.ViewModel] = []
@@ -29,7 +28,8 @@ final class CategoryHeader: BaseHeader {
         
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+//        collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        collectionView.register(CategoryCollectionViewCell.self)
         
         return collectionView
     }()
@@ -47,7 +47,7 @@ extension CategoryHeader: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
+        let cell = collectionView.getReuseCell(CategoryCollectionViewCell.self, indexPath: indexPath)
         cell.configure(with: categories[indexPath.item])
         return cell
     }

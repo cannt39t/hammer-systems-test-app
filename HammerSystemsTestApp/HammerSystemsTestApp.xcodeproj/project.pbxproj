@@ -38,6 +38,8 @@
 		053F16C72A44CE3600CA3351 /* HSCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F16C62A44CE3600CA3351 /* HSCategory.swift */; };
 		053F16D12A44FC5D00CA3351 /* HSAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F16D02A44FC5D00CA3351 /* HSAction.swift */; };
 		054B02872A46698E00F61B8A /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B02862A46698E00F61B8A /* MenuModels.swift */; };
+		05B040792A48E6D400DAFC8E /* UICollectionView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B040782A48E6D400DAFC8E /* UICollectionView + ext.swift */; };
+		05B0407B2A48E71400DAFC8E /* UICollectionReusableView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B0407A2A48E71400DAFC8E /* UICollectionReusableView + ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		053F16C62A44CE3600CA3351 /* HSCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSCategory.swift; sourceTree = "<group>"; };
 		053F16D02A44FC5D00CA3351 /* HSAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAction.swift; sourceTree = "<group>"; };
 		054B02862A46698E00F61B8A /* MenuModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModels.swift; sourceTree = "<group>"; };
+		05B040782A48E6D400DAFC8E /* UICollectionView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + ext.swift"; sourceTree = "<group>"; };
+		05B0407A2A48E71400DAFC8E /* UICollectionReusableView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView + ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				053A873B2A445857006B78FD /* UIView + ext.swift */,
+				05B040782A48E6D400DAFC8E /* UICollectionView + ext.swift */,
+				05B0407A2A48E71400DAFC8E /* UICollectionReusableView + ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				053A87332A445380006B78FD /* Resources.swift in Sources */,
+				05B0407B2A48E71400DAFC8E /* UICollectionReusableView + ext.swift in Sources */,
 				053A873C2A445857006B78FD /* UIView + ext.swift in Sources */,
 				0521AB772A45BB8300AFD234 /* MenuPresenter.swift in Sources */,
 				053A87192A444A86006B78FD /* AppDelegate.swift in Sources */,
@@ -396,6 +403,7 @@
 				0521AB782A45BB8300AFD234 /* MenuWorker.swift in Sources */,
 				0521AB902A45D34400AFD234 /* CategoryHeader.swift in Sources */,
 				0521ABA72A45F55C00AFD234 /* HSChooseButton.swift in Sources */,
+				05B040792A48E6D400DAFC8E /* UICollectionView + ext.swift in Sources */,
 				0521AB7C2A45BB8300AFD234 /* MenuInteractor.swift in Sources */,
 				0521ABA52A45F4CA00AFD234 /* BaseCelll.swift in Sources */,
 				0521AB872A45D31900AFD234 /* ActionCollectionViewCell.swift in Sources */,

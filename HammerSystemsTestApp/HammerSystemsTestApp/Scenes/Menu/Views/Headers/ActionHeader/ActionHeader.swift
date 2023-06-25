@@ -9,7 +9,6 @@ import UIKit
 
 final class ActionHeader: BaseHeader {
     
-    static let identifier = "ActionHeader"
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
@@ -22,7 +21,7 @@ final class ActionHeader: BaseHeader {
         
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(ActionCollectionViewCell.self, forCellWithReuseIdentifier: ActionCollectionViewCell.identifier)
+        collectionView.register(ActionCollectionViewCell.self)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 72, right: 8)
         
         return collectionView
@@ -67,7 +66,7 @@ extension ActionHeader: UICollectionViewDelegate {
 extension ActionHeader: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActionCollectionViewCell.identifier, for: indexPath) as! ActionCollectionViewCell
+        let cell = collectionView.getReuseCell(ActionCollectionViewCell.self, indexPath: indexPath)
         cell.configure(with: actions[indexPath.item])
         return cell
     }

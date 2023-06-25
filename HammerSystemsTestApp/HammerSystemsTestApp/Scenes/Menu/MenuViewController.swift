@@ -122,7 +122,7 @@ final class MenuViewController: UIViewController, MenuDisplayLogic {
 @objc extension MenuViewController {
     
     func didTapOnCityButton() {
-        // Choose city action
+        // router.showChooseCityViewController
     }
 }
 
@@ -144,9 +144,9 @@ extension MenuViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
         
-        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.identifier)
-        collectionView.register(ActionHeader.self, forSupplementaryViewOfKind: ActionHeader.identifier, withReuseIdentifier: ActionHeader.identifier)
-        collectionView.register(CategoryHeader.self, forSupplementaryViewOfKind: CategoryHeader.identifier, withReuseIdentifier: CategoryHeader.identifier)
+        collectionView.register(ProductCell.self)
+        collectionView.register(ActionHeader.self)
+        collectionView.register(CategoryHeader.self)
     }
     
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
@@ -212,7 +212,7 @@ extension MenuViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
+        let cell = collectionView.getReuseCell(ProductCell.self, indexPath: indexPath)
         if indexPath.section == 0 && indexPath.item == 0 {
             cell.layer.cornerRadius = 25
             cell.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -233,13 +233,13 @@ extension MenuViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == CategoryHeader.identifier {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CategoryHeader.identifier, for: indexPath) as! CategoryHeader
+            let header = collectionView.getReuseSupplementaryView(CategoryHeader.self, indexPath: indexPath)
             header.delegate = self
             header.categories = categoryViewModel
             self.categoryHeader = header
             return header
         } else {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ActionHeader.identifier, for: indexPath) as! ActionHeader
+            let header = collectionView.getReuseSupplementaryView(ActionHeader.self, indexPath: indexPath)
             self.actionsHeader = header
             header.actions = actionsViewModel
             return header

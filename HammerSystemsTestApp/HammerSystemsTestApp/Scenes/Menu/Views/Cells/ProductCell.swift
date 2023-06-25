@@ -11,8 +11,6 @@ import SDWebImage
 
 final class ProductCell: BaseCell {
     
-    static let identifier = "ProductCell"
-    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
