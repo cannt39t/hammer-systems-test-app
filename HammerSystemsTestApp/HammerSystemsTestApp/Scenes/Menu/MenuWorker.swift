@@ -35,10 +35,10 @@ final class MenuWorker {
     func getCategories(completion: @escaping fetchResponseCategories) {
         DispatchQueue.global(qos: .default).async {
             let categories = [
-                HSCategory(index: 0, name: "Пицца", isSelected: true),
-                HSCategory(index: 1, name: "Комбо", isSelected: false),
-                HSCategory(index: 2, name: "Десерты", isSelected: false),
-                HSCategory(index: 3, name: "Напитки", isSelected: false)
+                HSCategory(name: "Пицца"),
+                HSCategory(name: "Комбо"),
+                HSCategory(name: "Десерты"),
+                HSCategory(name: "Напитки")
             ]
             completion(.success(categories))
         }

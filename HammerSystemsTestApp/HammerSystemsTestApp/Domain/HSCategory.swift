@@ -9,7 +9,5 @@ import Foundation
 
 struct HSCategory {
 
-    let index: Int
     let name: String
-    var isSelected: Bool
 }
