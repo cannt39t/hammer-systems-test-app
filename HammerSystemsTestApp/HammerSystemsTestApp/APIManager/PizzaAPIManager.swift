@@ -7,7 +7,13 @@
 
 import Foundation
 
+enum HTTPMethod: String {
+    case GET
+}
+
 final class PizzaAPIManager {
+    
+    private let endpoint = "/productos"
     
     let headers = [
         "X-RapidAPI-Key": R.API.key,
@@ -15,9 +21,9 @@ final class PizzaAPIManager {
     ]
     
     func fetchData(completion: @escaping (Result<Data, Error>) -> Void) {
-        let url = URL(string: "\(R.API.url)/productos")!
+        let url = URL(string: "\(R.API.url)\(endpoint)")!
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
+        request.httpMethod = HTTPMethod.GET.rawValue
         request.allHTTPHeaderFields = headers
         
         if let cachedResponse = URLCache.shared.cachedResponse(for: request) {
