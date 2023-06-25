@@ -10,6 +10,12 @@ import UIKit
 
 enum R {
     
+    enum API {
+        static let url = "https://pizzaallapala.p.rapidapi.com"
+        static let key = "98b07ee665msh5f923589946f2fcp1c5b51jsncaa7695ea568"
+        static let host = "pizzaallapala.p.rapidapi.com"
+    }
+    
     enum Color {
         static let background = UIColor(named: "background")
         static let label = UIColor(named: "label")

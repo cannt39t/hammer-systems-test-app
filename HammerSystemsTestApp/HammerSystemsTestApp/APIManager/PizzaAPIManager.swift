@@ -10,12 +10,12 @@ import Foundation
 final class PizzaAPIManager {
     
     let headers = [
-        "X-RapidAPI-Key": "98b07ee665msh5f923589946f2fcp1c5b51jsncaa7695ea568",
-        "X-RapidAPI-Host": "pizzaallapala.p.rapidapi.com"
+        "X-RapidAPI-Key": R.API.key,
+        "X-RapidAPI-Host": R.API.host
     ]
     
     func fetchData(completion: @escaping (Result<Data, Error>) -> Void) {
-        let url = URL(string: "https://pizzaallapala.p.rapidapi.com/productos")!
+        let url = URL(string: "\(R.API.url)/productos")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
@@ -45,7 +45,6 @@ final class PizzaAPIManager {
                 }
             }
         }
-        
         dataTask.resume()
     }
 }
