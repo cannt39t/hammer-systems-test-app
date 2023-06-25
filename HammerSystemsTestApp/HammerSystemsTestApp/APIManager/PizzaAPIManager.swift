@@ -26,15 +26,14 @@ final class PizzaAPIManager {
         request.httpMethod = HTTPMethod.GET.rawValue
         request.allHTTPHeaderFields = headers
         
-        if let cachedResponse = URLCache.shared.cachedResponse(for: request) {
-            completion(.success(cachedResponse.data))
-            return
-        }
-        
         let session = URLSession.shared
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             if let error = error {
+                if let cachedResponse = URLCache.shared.cachedResponse(for: request) {
+                    completion(.success(cachedResponse.data))
+                    return
+                }
                 completion(.failure(error))
             } else {
                 if let data = data, let response = response as? HTTPURLResponse {
@@ -43,6 +42,10 @@ final class PizzaAPIManager {
                         URLCache.shared.storeCachedResponse(cachedResponse, for: request)
                         completion(.success(data))
                     } else {
+                        if let cachedResponse = URLCache.shared.cachedResponse(for: request) {
+                            completion(.success(cachedResponse.data))
+                            return
+                        }
                         let statusCodeError = NSError(domain: "PizzaAPIErrorDomain",
                                                       code: response.statusCode,
                                                       userInfo: [NSLocalizedDescriptionKey: "Request failed with status code \(response.statusCode)"])
