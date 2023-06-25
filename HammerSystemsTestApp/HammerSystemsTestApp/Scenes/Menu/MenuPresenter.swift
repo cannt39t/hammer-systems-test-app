@@ -28,7 +28,7 @@ final class MenuPresenter: MenuPresentationLogic {
             )}
             viewController?.displayActions(viewModel: actions)
         } else {
-            // showError(with: response.message)
+            viewController?.showError(with: response.message ?? "Unknown error")
         }
     }
     
@@ -44,7 +44,7 @@ final class MenuPresenter: MenuPresentationLogic {
             }
             viewController?.displayCategories(viewModel: categories)
         } else {
-            // showError(with: response.message)
+            viewController?.showError(with: response.message ?? "Unknown error")
         }
     }
     
@@ -58,7 +58,7 @@ final class MenuPresenter: MenuPresentationLogic {
             }
             viewController?.displayProducts(viewModel: products)
         } else {
-            // showError(with: response.message)
+            viewController?.showError(with: response.message ?? "Unknown error")
         }
     }
 }

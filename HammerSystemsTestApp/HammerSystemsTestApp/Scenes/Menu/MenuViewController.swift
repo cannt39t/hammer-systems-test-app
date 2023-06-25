@@ -20,6 +20,7 @@ protocol MenuDisplayLogic: AnyObject {
     func displayActions(viewModel: [Menu.Action.ViewModel])
     func displayCategories(viewModel: [Menu.Category.ViewModel])
     func displayProducts(viewModel: [Menu.Product.ViewModel])
+    func showError(with message: String)
 }
 
 final class MenuViewController: UIViewController, MenuDisplayLogic {
@@ -49,7 +50,6 @@ final class MenuViewController: UIViewController, MenuDisplayLogic {
     }
     
     // MARK: Setup
-    
     private func setup() {
         let viewController = self
         let interactor = MenuInteractor()
@@ -253,6 +253,15 @@ extension MenuViewController: CategoryHeaderDelegate {
         guard let categoryHeader = categoryHeader else { return }
         categoryHeader.canChange = false
         collectionView.scrollToItem(at: IndexPath(row: 0, section: sectionIndex), at: .top, animated: true)
+    }
+}
+
+extension MenuViewController {
+    
+    func showError(with message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
